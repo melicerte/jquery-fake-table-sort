@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Fake Table Sort jQuery plugin example</title>
+        <!-- Bootstrap is only loaded for the example style. Don't use it if you don't need to -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="demo.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10">
+            <div class="row">
+                <h1>Fake Table Sort jQuery plugin example</h1>
+
+                <div class="table-fake">
+
+                    <!-- header -->
+                    <div class="row table-fake-row-first">
+                        <div class="col-xs-8 col-sm-4 table-fake-col" data-height-parent=".row">
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:0px;"></div>
+                            <a href="#" rel="sort" class="fake-table-sorter asc">
+                                Label
+                            </a>
+                        </div>
+                        <div class="col-sm-2 hidden-xs table-fake-col" data-height-parent=".row">
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:0px;"></div>
+                            <a href="#" rel="sort" class="fake-table-sorter desc">
+                                Reference
+                            </a>
+                        </div>
+                        <div class="col-sm-4 hidden-xs table-fake-col" data-height-parent=".row">
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:0px;"></div>
+                            <a href="#" rel="sort" class="fake-table-sorter desc">
+                                Date
+                            </a>
+                        </div>
+                        <div class="col-xs-4 col-sm-2 table-fake-col no-border-right" data-height-parent=".row">
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:0px;"></div>
+                            <a href="#" rel="sort" class="fake-table-sorter asc">
+                                Amount
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row table-fake-row ">
+                        <div class="col-xs-8 col-sm-4 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>Why do you need table sorting anymay ?</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:0px;"></div>
+                        </div>
+                        <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
+                        <div class="col-xs-8 col-sm-2 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>5435346457687768</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                        <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
+                        <div class="col-xs-8 col-sm-4 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>01/04/2017 au 05/04/2018</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                        <div class="col-xs-4 col-sm-2 table-fake-col text-right no-border-right col-price" data-height-parent=".row">
+                            <strong>587.23 €</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                    </div>
+                    <div class="row table-fake-row ">
+                        <div class="col-xs-8 col-sm-4 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>The quick brown fox jumps over the lazy dog</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:0px;"></div>
+                        </div>
+                        <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
+                        <div class="col-xs-8 col-sm-2 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>5413244546456456</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                        <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
+                        <div class="col-xs-8 col-sm-4 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>01/03/2017 au 05/05/2018</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                        <div class="col-xs-4 col-sm-2 table-fake-col text-right no-border-right col-price" data-height-parent=".row">
+                            <strong>768.89 €</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                    </div>
+                    <div class="row table-fake-row ">
+                        <div class="col-xs-8 col-sm-4 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>Is this love ?</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:0px;"></div>
+                        </div>
+                        <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
+                        <div class="col-xs-8 col-sm-2 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>35435454656</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                        <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
+                        <div class="col-xs-8 col-sm-4 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>01/04/2018 au 05/04/2019</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                        <div class="col-xs-4 col-sm-2 table-fake-col text-right no-border-right col-price" data-height-parent=".row">
+                            <strong>345.87 €</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                    </div>
+                    <div class="row table-fake-row ">
+                        <div class="col-xs-8 col-sm-4 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>Yes it is</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:0px;"></div>
+                        </div>
+                        <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
+                        <div class="col-xs-8 col-sm-2 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>223453645765687</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                        <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
+                        <div class="col-xs-8 col-sm-4 table-fake-col text-uppercase" data-height-parent=".row">
+                            <strong>07/04/2017 au 05/04/2018</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                        <div class="col-xs-4 col-sm-2 table-fake-col text-right no-border-right col-price" data-height-parent=".row">
+                            <strong>90.00 €</strong>
+                            <div class="table-fake-col-before-adjust"></div>
+                            <div class="adjust-height" style="height:20px;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-1"></div>
+
+        <!-- jQuery -->
+        <script
+                src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+                crossorigin="anonymous"></script>
+
+        <!-- Fake Table Sort plugin -->
+        <script src="jquery.fakeTableSort.js"></script>
+
+        <!-- Application Javascript -->
+        <script type="text/javascript">
+
+            (function ($) {
+                $(document).ready(function () {
+
+                    /**
+                     * Convert french date interval "d/m/Y au d/m/Y" in a string which can be properly compared with lexicographical method
+                     * For example, converts "01/04/2017 au 05/06/2018" to "2017-04-01-2018-06-05"
+                     * @param value
+                     * @returns {string}
+                     */
+                    function convertDateInterval(value) {
+                        var matches = value.match(/([0-9]{2}\/[0-9]{2}\/[0-9]{4}) au ([0-9]{2}\/[0-9]{2}\/[0-9]{4})/);
+                        var date1Parts = matches[1].split('/');
+                        var date2Parts = matches[2].split('/');
+
+                        return date1Parts[2] + '-' + date1Parts[1] + '-' + date1Parts[0] + '-' + date2Parts[2] + '-' + date2Parts[1] + '-' + date2Parts[0];
+
+                    }
+
+                    //Start table fake sort
+                    jQuery('.table-fake').fakeTableSortable({
+                        headerItems: 'div.table-fake-row-first > div',
+                        lineItems: 'div.table-fake-row',
+                        cellItems: 'div.table-fake-col',
+                        firstSort: 'asc',
+                        sortMethods: ['lexicographical', 'lexicographical', 'lexicographical', 'number'],
+                        textConverter: [null, null, convertDateInterval, null]
+                    });
+                });
+            })(jQuery);
+        </script>
+
+    </body>
+</html>

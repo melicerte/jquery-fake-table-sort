@@ -1,0 +1,81 @@
+.table-fake {
+    margin-top: 40px;
+}
+
+.table-fake-row-first {
+    background-color: #f8f8f8;
+    margin: 0;
+    position: relative;
+}
+
+.table-fake-row-first a:hover {
+    text-decoration: none;
+}
+
+.table-fake-row-first a::after {
+    font-family: 'Glyphicons Halflings';
+    vertical-align: middle;
+}
+
+.table-fake-row-first a.asc::after {
+    content: "\e252";
+}
+
+.table-fake-row-first a.desc::after {
+    content: "\e253";
+}
+
+.table-fake-row-first .table-fake-col:before {
+    content: '';
+    position: absolute;
+    background-color: #b5d7fd;
+    height: 5px;
+    top: -5px;
+    left: 0;
+    width: 100%;
+}
+
+.table-fake-row-last {
+    background-color: #f8f8f8;
+    margin: 0;
+}
+
+.table-fake-row {
+    margin: 0;
+    border-bottom: 1px solid #fff;
+}
+
+.table-fake-row:not(.table-fake-row-first) > div:before {
+    content: attr(data-label);
+    text-transform: capitalize;
+    display: block;
+    font-size: 0.9375em;
+    line-height: 1.2em;
+    color: #0076be;
+}
+
+.table-fake-row:nth-of-type(odd) {
+    background-color: #b5d7fd;
+}
+
+.table-fake-row:nth-of-type(even) {
+    background-color: #d2e6fe;
+}
+
+.table-fake-row.table-fake-row-alert {
+    background-color: #ffd1d1;
+    color: #f54803;
+}
+
+.table-fake-row.table-fake-row-alert:not(.table-fake-row-first) > div:before {
+    color: #f54803;
+}
+
+.table-fake-col {
+    padding: 5px 10px;
+    border-right: 1px solid #fff;
+}
+
+.table-fake-col.no-border-right {
+    border-right: 0;
+}

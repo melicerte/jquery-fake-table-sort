@@ -1,0 +1,23 @@
+{
+  "name": "jquery-faketable-sort",
+  "version": "1.0.0",
+  "description": "Sort tables formatted without table markup",
+  "main": "jquery.FakeTableSort.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melicerte/jquery-faketable-sort.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery"
+  ],
+  "author": "melicerte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melicerte/jquery-faketable-sort/issues"
+  },
+  "homepage": "https://github.com/melicerte/jquery-faketable-sort#readme"
+}
