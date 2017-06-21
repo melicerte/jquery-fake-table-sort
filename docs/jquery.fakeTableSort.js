@@ -22,18 +22,18 @@
         $table.find(settings.headerItems).each(function(){
             var $headerItem = $(this);
 
-            var $action = $('<a href="#" rel="sort" class="fake-table-sorter ' + settings.firstSort + '"></a>').on('click', function(e){
-                var aSort = $(this);
-                sort(aSort, settings, $table);
+            var $action = $('<a href="#" class="fake-table-sorter" data-action="sort-' + settings.firstSort + '"></a>')
+                .on('click', function(){
+                    var $aSort = $(this);
 
-                if (aSort.hasClass('asc')) {
-                    aSort.removeClass('asc').addClass('desc');
-                } else {
-                    aSort.removeClass('desc').addClass('asc');
-                }
+                    //Run Sort
+                    sort($aSort, settings, $table);
 
-                return false;
-            });
+                    //Set current trigger
+                    setCurrentTrigger($aSort);
+
+                    return false;
+                });
 
             $action.append($headerItem.text());
 
@@ -96,7 +96,7 @@
         quickSort(columns, 0, columns.length - 1, sortMethod);
 
         //Reverse sort if wanted
-        if (elt.hasClass('desc')) {
+        if (elt.attr('data-action') == 'sort-desc') {
             columns.reverse();
         }
 
@@ -166,6 +166,38 @@
 
         return i;
     };
+
+    /**
+     * Set current trigger
+     * @param $trigger
+     */
+    function setCurrentTrigger ($trigger) {
+
+        //Add classes ans set data-action on trigger
+        if ($trigger.attr('data-action') == 'sort-asc') {
+            $trigger
+                .removeClass('asc')
+                .addClass('desc')
+                .attr('data-action', 'sort-desc')
+            ;
+
+        } else {
+            $trigger
+                .removeClass('desc')
+                .addClass('asc')
+                .attr('data-action', 'sort-asc')
+            ;
+        }
+
+        //Remove classes and reset data-action on other triggers
+        $trigger
+            .parent()
+            .siblings()
+            .children('a')
+            .removeClass('asc')
+            .removeClass('desc')
+            .attr('data-action', 'sort-asc')
+    }
 
     /**
      * Compare 2 values according to $method

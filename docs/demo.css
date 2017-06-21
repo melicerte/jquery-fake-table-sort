@@ -1,14 +1,20 @@
+p {
+    margin:10px 0;
+}
+
 .table-fake {
     margin-top: 40px;
 }
 
 .table-fake-row-first {
-    background-color: #f8f8f8;
+    background-color: white;
     margin: 0;
     position: relative;
 }
 
-.table-fake-row-first a:hover {
+.table-fake-row-first a:hover,
+.table-fake-row-first a:active,
+.table-fake-row-first a:focus {
     text-decoration: none;
 }
 
@@ -28,7 +34,7 @@
 .table-fake-row-first .table-fake-col:before {
     content: '';
     position: absolute;
-    background-color: #b5d7fd;
+    background-color: black;
     height: 5px;
     top: -5px;
     left: 0;
@@ -55,11 +61,11 @@
 }
 
 .table-fake-row:nth-of-type(odd) {
-    background-color: #b5d7fd;
+    background-color: #eeeeee;
 }
 
 .table-fake-row:nth-of-type(even) {
-    background-color: #d2e6fe;
+    background-color: #dddddd;
 }
 
 .table-fake-row.table-fake-row-alert {
@@ -72,10 +78,25 @@
 }
 
 .table-fake-col {
+    height: 50px;
     padding: 5px 10px;
     border-right: 1px solid #fff;
 }
 
 .table-fake-col.no-border-right {
     border-right: 0;
+}
+
+pre {
+    display: block;
+    padding: 10px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }

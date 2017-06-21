@@ -4,7 +4,7 @@ This jQuery plugin allows to sort table made without table markup.
 
 ## Demo
 
-<a href="https://melicerte.github.io/jquery-faketable-sort/demo.html" target="_blank">jQuery fake table sort demo</a>
+<a href="https://melicerte.github.io/jquery-fake-table-sort/demo.html" target="_blank">jQuery fake table sort demo</a>
 
 ## Installation
 
