@@ -7,7 +7,11 @@
 
         return this.each(function() {
             var $table = $(this);
-            initHeaders($table, settings);
+
+            //Enable sort only if there is more than one line
+            if ($table.find(settings.lineItems).length > 1) {
+                initHeaders($table, settings);
+            }
         });
 
     };

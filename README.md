@@ -8,7 +8,13 @@ This jQuery plugin allows to sort table made without table markup.
 
 ## Installation
 
-Make sure to include jQuery in your page:
+From npm
+
+```bash
+npm install melicerte/jquery-fake-table-sort
+```
+
+Use directly in HTML:
 
 ```html
 <script
