@@ -1,6 +1,6 @@
-# Simple fake table sorter
+# Efficient table sorter
 
-This jQuery plugin allows to sort table made without table markup.
+This jQuery plugin allows to sort data made with any markup, table or not.
 
 ## Demo
 
