@@ -47,6 +47,8 @@ jQuery('.table-fake').fakeTableSortable({
     headerItems: 'div.table-fake-row-first > div',
     lineItems: 'div.table-fake-row',
     cellItems: 'div.table-fake-col',
+    linesContainers: 'div.table-fake-row-container',
+    firstSort: 'asc',
     sortMethods: ['lexicographical', 'lexicographical', 'lexicographical', 'number'],
     textConverter: [null, null, convertDateInterval, null]
 });
