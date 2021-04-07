@@ -1,6 +1,6 @@
 {
   "name": "jquery-fake-table-sort",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sort tables formatted without table markup",
   "main": "jquery.fakeTableSort.js",
   "scripts": {
