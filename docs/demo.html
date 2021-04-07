@@ -234,6 +234,7 @@ sortMethods: ['lexicographical', '<strong>number</strong>', 'lexicographical', '
         </div>
 
         <div class="container" style="margin-top:50px;">
+            <h2>Want to use a table anymway ? You can !</h2>
             <div class="row">
                 <div class="col-xs-1"></div>
                 <div class="col-xs-10">
@@ -257,7 +258,7 @@ sortMethods: ['lexicographical', '<strong>number</strong>', 'lexicographical', '
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr class="table-fake-row ">
                                 <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
                                     <strong>Why do you need table sorting anymay ?</strong>
                                 </td>
@@ -271,7 +272,7 @@ sortMethods: ['lexicographical', '<strong>number</strong>', 'lexicographical', '
                                     <strong>587.23 €</strong>
                                 </td>
                             </tr>
-                            <tr class="row table-fake-row ">
+                            <tr class="table-fake-row">
                                 <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
                                     <strong>The quick brown fox jumps over the lazy dog</strong>
                                 </td>
@@ -285,7 +286,7 @@ sortMethods: ['lexicographical', '<strong>number</strong>', 'lexicographical', '
                                     <strong>768.89 €</strong>
                                 </td>
                             </tr>
-                            <tr class="row table-fake-row ">
+                            <tr class="table-fake-row">
                                 <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
                                     <strong>Is this love ?</strong>
                                 </td>
@@ -299,7 +300,7 @@ sortMethods: ['lexicographical', '<strong>number</strong>', 'lexicographical', '
                                     <strong>345.87 €</strong>
                                 </td>
                             </tr>
-                            <tr class="row table-fake-row ">
+                            <tr class="table-fake-row">
                                 <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
                                     <strong>Yes it is</strong>
                                 </td>
@@ -315,11 +316,20 @@ sortMethods: ['lexicographical', '<strong>number</strong>', 'lexicographical', '
                             </tr>
                         </tbody>
                     </table>
-
-                    <p>
-                        Want to use a table anyway ? You can !
-                    </p>
-
+                    <p>On this example, a real table is used.</p>
+                    <pre class="prettyprint">
+&lt;script&gt;
+jQuery('.table-fake3').fakeTableSortable({
+    headerItems: 'thead > tr > th',
+    lineItems: 'tbody > tr',
+    cellItems: 'td',
+    linesContainer: 'tbody', // This is where you tell where lines are contained
+    firstSort: 'asc',
+    sortMethods: ['lexicographical', 'number', 'lexicographical', 'number'],
+    textConverter: [null, null, convertDateInterval, null]
+});
+&lt;/script&gt;
+                    </pre>
                 </div>
                 <div class="col-xs-1"></div>
             </div>
