@@ -3,10 +3,10 @@
 
     $.fn.fakeTableSortable = function (options) {
 
-        var settings = $.extend({}, $.fn.fakeTableSortable.defaults, options);
+        const settings = $.extend({}, $.fn.fakeTableSortable.defaults, options);
 
         return this.each(function() {
-            var $table = $(this);
+            const $table = $(this);
 
             //Enable sort only if there is more than one line
             if ($table.find(settings.lineItems).length > 1) {
@@ -24,9 +24,9 @@
     function initHeaders ($table, settings) {
 
         $table.find(settings.headerItems).each(function(){
-            var $headerItem = $(this);
+            const $headerItem = $(this);
 
-            var $action = $('<a href="#" class="fake-table-sorter" data-action="sort-' + settings.firstSort + '"></a>')
+            const $action = $('<a href="#" class="fake-table-sorter" data-action="sort-' + settings.firstSort + '"></a>')
                 .on('click', function(){
                     var $aSort = $(this);
 
@@ -56,21 +56,21 @@
     function sort (elt, settings, $table) {
 
         //Get column datas
-        var $column     = elt.parent();
-        var $columnList = $column.parent().children();
-        var iCol        = $columnList.index($column);
-        var columns     = [];
+        const $column     = elt.parent();
+        const $columnList = $column.parent().children();
+        const iCol        = $columnList.index($column);
+        const columns     = [];
 
-        var $lineItems = $table.find(settings.lineItems);
+        const $lineItems = $table.find(settings.lineItems);
 
         //For each line, get cell texts to use for sort
         $lineItems.each(function(){
 
-            var line = $(this);
+            const line = $(this);
 
-            var cell = $(line.find(settings.cellItems).get(iCol));
+            const cell = $(line.find(settings.cellItems).get(iCol));
 
-            var cellText = cell.text().trim();
+            let cellText = cell.text().trim();
             if (typeof settings.textConverter === 'string') {
                 cellText = settings.textConverter(cellText);
             }
@@ -86,7 +86,7 @@
         });
 
         //Set sort method
-        var sortMethod = 'lexicographical';
+        let sortMethod = 'lexicographical';
         switch(typeof settings.sortMethods) {
             case 'string':
                 sortMethod = settings.sortMethods;
@@ -108,13 +108,21 @@
         $lineItems.remove();
 
         //Add sorted lines to fake table
-        for (var iLine = 0; iLine < columns.length ;iLine++) {
+        for (let iLine = 0; iLine < columns.length ;iLine++) {
 
-            var curLineItems = $table.find(settings.lineItems);
-            var $line = columns[iLine].line;
+            const curLineItems = $table.find(settings.lineItems);
+            const $line = columns[iLine].line;
+
+            // If lines container exist, use it
+            if (settings.linesContainer !== null) {
+                //Do add line
+                $line.appendTo($table.find(settings.linesContainer));
+
+                continue;
+            }
 
             //By default, add after header
-            var $where = $table.find(settings.headerItems).parent();
+            let $where = $table.find(settings.headerItems).parent();
 
             //If lines already added, add after last line
             if (curLineItems.length > 0) {
@@ -136,7 +144,7 @@
      */
     function quickSort (array, low, high, sortMethod) {
         if (low < high) {
-            var p = partition(array, low, high, sortMethod);
+            const p = partition(array, low, high, sortMethod);
             quickSort(array, low, p - 1, sortMethod);
             quickSort(array, p + 1, high, sortMethod);
         }
@@ -151,17 +159,17 @@
      * @returns {number}
      */
     function partition (array, low, high, sortMethod) {
-        var pivot = array[high];
-        var i = low -1;
+        const pivot = array[high];
+        let i = low -1;
 
-        for (var j = low; j <= high; j++) {
+        for (let j = low; j <= high; j++) {
 
             var comparison = compareValues(array[j].text, pivot.text, sortMethod);
 
             if (comparison === 0 || comparison === -1) {
                 i++;
                 if (i != j) {
-                    var temp = array[i];
+                    const temp = array[i];
                     array[i] = array[j];
                     array[j] = temp;
                 }
@@ -243,6 +251,7 @@
         headerItems: 'div.table-fake-row-first > div',  //Header items
         lineItems: 'div.table-fake-row',                //Line items
         cellItems: 'div.table-fake-col',                //Column items
+        linesContainer: null,                           // If there is a lines container
         firstSort: 'asc',                               //First sort order : asc, then desc, then asc, etc.
         sortMethods: 'lexicographical',                 //Sort method : lexicographical for lexicographical, number for numbers. For a different sort function on each column, use ['number', 'lexicographical']
         textConverter: null                             //Cell text converter : convert data of cell before sorting. Can be string or array with same number of items as sortMethods parameter
