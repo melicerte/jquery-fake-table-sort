@@ -61,6 +61,9 @@ jQuery('.table-fake').fakeTableSortable({
 **cellItems** : CSS selector to find content cell in content lines<br/>
 *Defaults to div.table-fake-col*
 
+**linesContainer** : CSS selector to find The HTML tag containing the rows.<br/>
+*Defaults to null, rows are added after headerItems*
+
 **firstSort** : 'asc' or 'desc' : set first wanted order sort.<br/>
  Defaults to 'asc'.
 

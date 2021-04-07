@@ -233,6 +233,98 @@ sortMethods: ['lexicographical', '<strong>number</strong>', 'lexicographical', '
             </div>
         </div>
 
+        <div class="container" style="margin-top:50px;">
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10">
+                    <table class="table-fake3">
+
+                        <!-- header -->
+                        <thead class="row table-fake-row-first">
+                            <tr>
+                                <th class="col-xs-8 col-sm-4 table-fake-col">
+                                    Label
+                                </th>
+                                <th class="col-sm-2 hidden-xs table-fake-col">
+                                    Reference
+                                </th>
+                                <th class="col-sm-4 hidden-xs table-fake-col">
+                                    Date
+                                </th>
+                                <th class="col-xs-4 col-sm-2 table-fake-col text-right no-border-right">
+                                    Amount
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row table-fake-row ">
+                                <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
+                                    <strong>Why do you need table sorting anymay ?</strong>
+                                </td>
+                                <td class="col-xs-8 col-sm-2 table-fake-col text-uppercase">
+                                    <strong>5435346457687768</strong>
+                                </td>
+                                <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
+                                    <strong>01/04/2017 au 05/04/2018</strong>
+                                </td>
+                                <td class="col-xs-4 col-sm-2 table-fake-col text-right no-border-right col-price">
+                                    <strong>587.23 €</strong>
+                                </td>
+                            </tr>
+                            <tr class="row table-fake-row ">
+                                <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
+                                    <strong>The quick brown fox jumps over the lazy dog</strong>
+                                </td>
+                                <td class="col-xs-8 col-sm-2 table-fake-col text-uppercase">
+                                    <strong>5413244546456456</strong>
+                                </td>
+                                <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
+                                    <strong>01/03/2017 au 05/05/2018</strong>
+                                </td>
+                                <td class="col-xs-4 col-sm-2 table-fake-col text-right no-border-right col-price">
+                                    <strong>768.89 €</strong>
+                                </td>
+                            </tr>
+                            <tr class="row table-fake-row ">
+                                <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
+                                    <strong>Is this love ?</strong>
+                                </td>
+                                <td class="col-xs-8 col-sm-2 table-fake-col text-uppercase">
+                                    <strong>35435454656</strong>
+                                </td>
+                                <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
+                                    <strong>01/04/2018 au 05/04/2019</strong>
+                                </td>
+                                <td class="col-xs-4 col-sm-2 table-fake-col text-right no-border-right col-price">
+                                    <strong>345.87 €</strong>
+                                </td>
+                            </tr>
+                            <tr class="row table-fake-row ">
+                                <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
+                                    <strong>Yes it is</strong>
+                                </td>
+                                <td class="col-xs-8 col-sm-2 table-fake-col text-uppercase">
+                                    <strong>223453645765687</strong>
+                                </td>
+                                <td class="col-xs-8 col-sm-4 table-fake-col text-uppercase">
+                                    <strong>07/04/2017 au 05/04/2018</strong>
+                                </td>
+                                <td class="col-xs-4 col-sm-2 table-fake-col text-right no-border-right col-price">
+                                    <strong>90.00 €</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        Want to use a table anyway ? You can !
+                    </p>
+
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+        </div>
+
 
         <!-- jQuery -->
         <script
@@ -282,6 +374,17 @@ sortMethods: ['lexicographical', '<strong>number</strong>', 'lexicographical', '
                         headerItems: 'div.table-fake-row-first > div',
                         lineItems: 'div.table-fake-row',
                         cellItems: 'div.table-fake-col',
+                        firstSort: 'asc',
+                        sortMethods: ['lexicographical', 'number', 'lexicographical', 'number'],
+                        textConverter: [null, null, convertDateInterval, null]
+                    });
+
+                    //Start table fake 3 sort
+                    jQuery('.table-fake3').fakeTableSortable({
+                        headerItems: 'thead > tr > th',
+                        lineItems: 'tbody > tr',
+                        cellItems: 'td',
+                        linesContainer: 'tbody',
                         firstSort: 'asc',
                         sortMethods: ['lexicographical', 'number', 'lexicographical', 'number'],
                         textConverter: [null, null, convertDateInterval, null]
